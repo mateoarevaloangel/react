@@ -43,7 +43,7 @@ axios
             response.data
             //JSON.parse(response.data)
              );
-            window.location.href = "/n";
+            window.location.href = "/menu";
         } 
           }
       ).catch(err=>{
@@ -63,21 +63,7 @@ render(){
     
     return(
         <div className="container">
-            <div className="row">
-			<div className="col-md-6 col-md-offset-3">
-				<div className="panel panel-login">
-					<div className="panel-heading"></div>
-            <div className="row">
-							<div className="col-xs-6">
-								<a href="/" className="active" id="login-form-link">Iniciar sesión</a>
-							</div>
-							<div className="col-xs-6">
-								<a href="/register" id="register-form-link">Regístrate ahora</a>
-							</div>
-						</div>
-                        </div>
-                        </div>
-                        </div>
+            
 
             {mensaje}
             <div className="card">

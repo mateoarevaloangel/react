@@ -6,10 +6,11 @@ import Menu from './components/Menu';
 
 const AppRoutes=()=>
 
-    <Switch>
-        <Route path="/" component={Form} />
-        <Route path="/n" component={Menu} />
-    </Switch>
+   
+<Switch>
+<Route path="/menu" component={Menu} />
+<Route path="/" component={Form} />
+</Switch>
 
 
 export default AppRoutes;
