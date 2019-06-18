@@ -29,9 +29,8 @@ handleSubmit(e){
 e.preventDefault();
 console.log(e.target.email.value)
 axios
-      .post('http://localhost:3200/log',{
-        email:e.target.email.value,
-        password :e.target.password.value
+      .post('http://localhost:3200/busqueda',{
+        album:e.target.album.value,
       })
       .then(response => {
         this.state.resp=response.data.error
@@ -43,7 +42,9 @@ axios
         })
         console.log('aquii')
         }else{
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token',
+            JSON.parse(response.data)
+             );
             window.location.href = "/n";
         } 
           }
@@ -83,7 +84,7 @@ render(){
             {mensaje}
             <div className="card">
             <div className="card-header">
-                log
+                buscar
             </div>
             
             <form className="card-body" onSubmit={this.handleSubmit}>
@@ -98,19 +99,10 @@ render(){
                     </input>
 
                 </div>
-                <div className="form-group">
-                    <input
-                    type="password"
-                    name="password"
-                    className="form-control"
-                    placeholder="password"
-                    onChange={this.handleInput}
-                    >
-                    </input>
-                    </div>
+                
                 <div className="form-group">
                     <button className="btn btn-primary">
-                        log
+                        buscar
                     </button>
                 </div>
             </form>
