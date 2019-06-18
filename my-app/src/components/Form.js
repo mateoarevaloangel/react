@@ -8,10 +8,7 @@ class Form extends Component{
 constructor(){
     super();
     this.state={
-        first_name:'',
-        email:'',
-        password :'',
-        last_name:'',
+        album:'',
         resp:''
     }
     this.handleInput=this.handleInput.bind(this);
@@ -27,7 +24,7 @@ handleInput(e){
 handleSubmit(e){
 //alert(e);
 e.preventDefault();
-console.log(e.target.email.value)
+console.log(e.target.album.value)
 axios
       .post('http://localhost:3200/busqueda',{
         album:e.target.album.value,
@@ -42,8 +39,9 @@ axios
         })
         console.log('aquii')
         }else{
-            localStorage.setItem('token',
-            JSON.parse(response.data)
+            localStorage.setItem('album',
+            response.data
+            //JSON.parse(response.data)
              );
             window.location.href = "/n";
         } 
@@ -91,7 +89,7 @@ render(){
                 <div className="form-group">
                     <input
                     type="text"
-                    name="email"
+                    name="album"
                     className="form-control"
                     placeholder="nombre"
                     onChange={this.handleInput}
