@@ -1,15 +1,14 @@
 import React,{Component} from 'react';
+const {album}= localStorage.getItem('album');
 
 class Menu extends Component{
     constructor(){
         super();
-        this.state={
-            album:'',
-            resp:''
-        }
+        this.state={album}
+        console.log({album})
     }
     render(){
-      const album= localStorage.getItem('album');
+    var  a=localStorage.getItem('album');
         return(
             <div className="App">
             <nav className="navbar navbar-dark bg-dark">
@@ -19,8 +18,13 @@ class Menu extends Component{
             </nav>
             <div className="container">
               <div className="row mt-4">
-                {console.log(album.albums)}  
-                {album.albums}
+                  <h1>
+                  {console.log("aqiii")}
+                {console.log(localStorage.getItem('album'))}  
+                {localStorage.getItem('album')}
+                {this.props.href}
+                  </h1>
+              
 
               </div>
             </div>
